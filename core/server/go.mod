@@ -179,7 +179,7 @@ require (
 	lukechampine.com/blake3 v1.4.1 // indirect
 )
 
-replace github.com/sagernet/sing-box => github.com/Throneproj/sing-box v1.11.16-0.20260407165342-1c7e2298469c
+replace github.com/sagernet/sing-box => github.com/hoaxisr/amnezia-box v0.0.0-20260330154818-d93ea0326d22
 
 replace github.com/sagernet/cronet-go => github.com/parhelia512/cronet-go v0.0.0-20260329114135-f2495ade5da7
 
