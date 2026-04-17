@@ -7,6 +7,7 @@
 #include "include/ui/profile/edit_vless.h"
 #include "include/ui/profile/edit_anytls.h"
 #include "include/ui/profile/edit_wireguard.h"
+#include "include/ui/profile/edit_amneziawg.h"
 #include "include/ui/profile/edit_tailscale.h"
 #include "include/ui/profile/edit_ssh.h"
 #include "include/ui/profile/edit_custom.h"
@@ -246,6 +247,7 @@ DialogEditProfile::DialogEditProfile(const QString &_type, int profileOrGroupId,
         LOAD_TYPE("anytls")
         LOAD_TYPE("shadowtls")
         LOAD_TYPE("wireguard")
+        LOAD_TYPE("amneziawg")
         LOAD_TYPE("tailscale")
         LOAD_TYPE("ssh")
         ui->type->addItem(tr("Custom (%1 outbound)").arg(software_core_name), "outbound");
@@ -350,6 +352,10 @@ void DialogEditProfile::typeSelected(const QString &newType) {
         innerEditor = _innerWidget;
     } else if (type == "wireguard") {
         auto _innerWidget = new EditWireguard(this);
+        innerWidget = _innerWidget;
+        innerEditor = _innerWidget;
+    } else if (type == "amneziawg") {
+        auto _innerWidget = new EditAmneziaWG(this);
         innerWidget = _innerWidget;
         innerEditor = _innerWidget;
     } else if (type == "tailscale") {

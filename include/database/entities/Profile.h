@@ -2,6 +2,7 @@
 
 #include <include/configs/outbounds/tailscale.h>
 #include <include/configs/outbounds/wireguard.h>
+#include <include/configs/outbounds/amneziawg.h>
 
 #include "include/configs/common/Outbound.h"
 #include "include/configs/outbounds/anyTLS.h"
@@ -124,6 +125,10 @@ namespace Configs {
 
         [[nodiscard]] Configs::wireguard *Wireguard() const {
             return dynamic_cast<Configs::wireguard *>(outbound.get());
+        };
+
+        [[nodiscard]] Configs::amneziawg *AmneziaWG() const {
+            return dynamic_cast<Configs::amneziawg *>(outbound.get());
         };
 
         [[nodiscard]] Configs::Custom *Custom() const {
