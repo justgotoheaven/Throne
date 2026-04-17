@@ -119,6 +119,8 @@ namespace Configs {
             outbound = new Configs::shadowtls();
         } else if (type == "wireguard") {
             outbound = new Configs::wireguard();
+        } else if (type == "amneziawg") {
+            outbound = new Configs::amneziawg();
         } else if (type == "tailscale") {
             outbound = new Configs::tailscale();
         } else if (type == "ssh") {
@@ -302,6 +304,8 @@ namespace Configs {
             outbound = new Configs::shadowtls();
         } else if (type == "wireguard") {
             outbound = new Configs::wireguard();
+        } else if (type == "amneziawg") {
+            outbound = new Configs::amneziawg();
         } else if (type == "tailscale") {
             outbound = new Configs::tailscale();
         } else if (type == "ssh") {

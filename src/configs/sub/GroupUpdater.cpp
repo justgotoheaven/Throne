@@ -271,6 +271,13 @@ namespace Subscription {
             if (!ok) return;
         }
 
+        // Amnezia WG
+        if (str.startsWith("awg://")) {
+            ent = Configs::ProfilesRepo::NewProfile("amneziawg");
+            auto ok = ent->AmneziaWG()->ParseFromLink(str);
+            if (!ok) return;
+        }
+
         // SSH
         if (str.startsWith("ssh://")) {
             ent = Configs::ProfilesRepo::NewProfile("ssh");
@@ -417,6 +424,13 @@ namespace Subscription {
                 if (!ok) continue;
             }
 
+            // Amnezia WG
+            if (out["type"] == "amneziawg") {
+                ent = Configs::ProfilesRepo::NewProfile("amneziawg");
+                auto ok = ent->AmneziaWG()->ParseFromJson(out);
+                if (!ok) continue;
+            }
+
             // SSH
             if (out["type"] == "ssh") {
                 ent = Configs::ProfilesRepo::NewProfile("ssh");
@@ -520,6 +534,13 @@ namespace Subscription {
                 if (out.type == "ssh") {
                     ent = Configs::ProfilesRepo::NewProfile("ssh");
                     auto ok = ent->SSH()->ParseFromClash(out);
+                    if (!ok) continue;
+                }
+    
+                // Amnezia WG
+                if (out.type == "amneziawg") {
+                    ent = Configs::ProfilesRepo::NewProfile("amneziawg");
+                    auto ok = ent->AmneziaWG()->ParseFromClash(out);
                     if (!ok) continue;
                 }
     
