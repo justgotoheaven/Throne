@@ -188,6 +188,10 @@ set(PROJECT_SOURCES
         src/ui/profile/edit_wireguard.cpp
         include/ui/profile/edit_wireguard.ui
 
+        include/ui/profile/edit_amneziawg.h
+        src/ui/profile/edit_amneziawg.cpp
+        include/ui/profile/edit_amneziawg.ui
+
         src/ui/setting/dialog_basic_settings.cpp
         include/ui/setting/dialog_basic_settings.h
         include/ui/setting/dialog_basic_settings.ui
