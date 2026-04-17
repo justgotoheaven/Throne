@@ -284,6 +284,7 @@ set(PROJECT_SOURCES
         src/configs/outbounds/vless.cpp
         src/configs/outbounds/vmess.cpp
         src/configs/outbounds/wireguard.cpp
+        src/configs/outbounds/amneziawg.cpp
         include/configs/generate.h
         src/configs/generate.cpp
         include/configs/common/utils.h
